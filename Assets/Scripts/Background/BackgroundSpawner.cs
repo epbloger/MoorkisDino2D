@@ -7,9 +7,9 @@ namespace Moorkis.Dino2D.Background
         [SerializeField] private BackgroundView _backgroundDesert;
         [SerializeField] private Transform _parent;
 
-        public void SpawnDesert()
+        public BackgroundView SpawnDesert()
         {
-            var t = Instantiate(_backgroundDesert, _parent);
+            return Instantiate(_backgroundDesert, _parent);
         }
     }
 }
