@@ -1,47 +1,52 @@
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using UnityEngine;
 
 namespace Moorkis.Dino2D.Background
 {
     public class BackgroundMover : MonoBehaviour
     {
         [SerializeField] private float _speed = 200f;
-        [SerializeField] private RectTransform _transformFirst;
-        [SerializeField] private RectTransform _transformSecond;
-        //    [SerializeField, FormerlySerializedAs("LeftCorner")] private int _leftCorner;
-        //    [SerializeField] private int _speed;
-        //    private int _firstX;
-        //    private int _secondX;
 
-        //    private void Start()
-        //    {
-        //        _firstX = (int)_transformFirst.anchoredPosition.x;
-        //        _secondX = (int)_transformSecond.anchoredPosition.x;
-        //    }
+        private RectTransform _left;
+        private RectTransform _right;
+        private float _width;
+        private float _leftX;
 
-        //    private void Update()
-        //    {
-        //        if (_firstX <= _leftCorner)
-        //        {
-        //            var pos = (int)_transformSecond.sizeDelta.x;
-        //            _firstX = pos;
-        //            _transformFirst.anchoredPosition = new Vector2(pos, 0);
-        //        }
-        //        if (_secondX <= _leftCorner)
-        //        {
-        //            var pos = (int)_transformFirst.sizeDelta.x;
-        //            _secondX = pos;
-        //            _transformSecond.anchoredPosition = new Vector2(pos, 0);
-        //        }
-        //        MoveBackground();
-        //    }
+        public void StartMoving(BackgroundView first, BackgroundView second)
+        {
+            _left = (RectTransform)first.transform;
+            _right = (RectTransform)second.transform;
+            _width = _left.rect.width;
+            _leftX = 0f;
 
-        //    private void MoveBackground()
-        //    {
-        //        _firstX -= _speed;
-        //        _secondX -= _speed;
-        //        _transformFirst.anchoredPosition = new Vector2(_firstX, 0);
-        //        _transformSecond.anchoredPosition = new Vector2(_secondX, 0);
-        //    }
+            _right.pivot = new Vector2(1f, 0.5f);
+            _right.localScale = new Vector3(-1f, 1f, 1f);
+
+            SetPositions();
+        }
+
+        private void Update()
+        {
+            if (_left == null)
+                return;
+
+            _leftX -= _speed * Time.deltaTime;
+
+            while (_leftX <= -_width)
+            {
+                _leftX += _width;
+
+                RectTransform oldLeft = _left;
+                _left = _right;
+                _right = oldLeft;
+            }
+
+            SetPositions();
+        }
+
+        private void SetPositions()
+        {
+            _left.anchoredPosition = new Vector2(_leftX, 0f);
+            _right.anchoredPosition = new Vector2(_leftX + _width, 0f);
+        }
     }
 }

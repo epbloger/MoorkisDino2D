@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _backgroundSpawner: {fileID: 1198727683}
-  _BackgroundMover: {fileID: 0}
+  _backgroundMover: {fileID: 1198727681}
 --- !u!1 &590634811
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,11 +220,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 2160, y: 1080}
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2527c7a4577dfc04c85fb30292af1f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _backgroundDesert: {fileID: 8530004442020844864, guid: 7adccc0a9eff5064dbe6761d2975064c, type: 3}
+  _backgroundDay: {fileID: 8530004442020844864, guid: deb399fde8c14af59d0cc92517a152a5, type: 3}
   _parent: {fileID: 590634815}
 --- !u!1 &1594116003
 GameObject:

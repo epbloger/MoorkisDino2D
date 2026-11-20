@@ -4,12 +4,12 @@ namespace Moorkis.Dino2D.Background
 {
     public class BackgroundSpawner : MonoBehaviour
     {
-        [SerializeField] private BackgroundView _backgroundDesert;
+        [SerializeField] private BackgroundView _backgroundDay;
         [SerializeField] private Transform _parent;
 
-        public BackgroundView SpawnDesert()
+        public BackgroundView SpawnDay()
         {
-            return Instantiate(_backgroundDesert, _parent);
+            return Instantiate(_backgroundDay, _parent);
         }
     }
 }
