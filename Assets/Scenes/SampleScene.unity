@@ -122,6 +122,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &179818324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 179818325}
+  - component: {fileID: 179818326}
+  m_Layer: 0
+  m_Name: PlayerSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &179818325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179818324}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 567397595}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &179818326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179818324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c08c1126bcfb0242a647f77387fc395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerPrefab: {fileID: 4155522700364016678, guid: 268a2cb517c6c4e4b86fa9bb273e14a1, type: 3}
+  _parent: {fileID: 590634815}
 --- !u!1 &567397594
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +202,7 @@ Transform:
   - {fileID: 1198727682}
   - {fileID: 590634815}
   - {fileID: 1594116006}
+  - {fileID: 179818325}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &567397596
@@ -172,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _backgroundSpawner: {fileID: 1198727683}
   _backgroundMover: {fileID: 1198727681}
+  _playerSpawner: {fileID: 179818326}
 --- !u!1 &590634811
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3899603e239a9b749a68169d9a2dadaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 200
 --- !u!4 &1198727682
 Transform:
   m_ObjectHideFlags: 0

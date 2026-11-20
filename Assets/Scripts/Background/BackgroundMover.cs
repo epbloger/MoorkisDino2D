@@ -18,8 +18,8 @@ namespace Moorkis.Dino2D.Background
             _width = _left.rect.width;
             _leftX = 0f;
 
-            _right.pivot = new Vector2(1f, 0.5f);
-            _right.localScale = new Vector3(-1f, 1f, 1f);
+
+            MirroredBackground();
 
             SetPositions();
         }
@@ -41,6 +41,12 @@ namespace Moorkis.Dino2D.Background
             }
 
             SetPositions();
+        }
+
+        private void MirroredBackground()
+        {
+            _right.pivot = new Vector2(1f, 0.5f);
+            _right.localScale = new Vector3(-1f, 1f, 1f);
         }
 
         private void SetPositions()
