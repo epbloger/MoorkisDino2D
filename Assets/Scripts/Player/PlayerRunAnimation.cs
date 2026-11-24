@@ -7,6 +7,8 @@ namespace Moorkis.Dino2D.Player
         [SerializeField] private PlayerView _view;
         [SerializeField] private Sprite[] _frames;
 
+        private const float TimeAnimation = 0.12f;
+        
         private float _timer;
         private int _frameIndex;
 
@@ -14,12 +16,12 @@ namespace Moorkis.Dino2D.Player
         {
             _timer += Time.deltaTime;
 
-            if(_timer < 0.12f)
+            if(_timer < TimeAnimation)
             {
                 return;
             }
 
-            _timer -= 0.12f;
+            _timer -= TimeAnimation;
             ShowNextFrame();
         }
 

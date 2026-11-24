@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4155522700364016678}
   - component: {fileID: 6958704600449063368}
   - component: {fileID: 8962822502936715746}
+  - component: {fileID: 2035424162567948519}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -37,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 140, y: 270}
+  m_AnchoredPosition: {x: -150, y: 270}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &750128511655640997
@@ -68,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1753408432, guid: ff3df53b01fc8224cbd857c0f068c0a2, type: 3}
+  m_Sprite: {fileID: 1554437449, guid: ff3df53b01fc8224cbd857c0f068c0a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -118,7 +119,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _view: {fileID: 4155522700364016678}
   _frames:
-  - {fileID: -1753408432, guid: ff3df53b01fc8224cbd857c0f068c0a2, type: 3}
-  - {fileID: 443126820, guid: ff3df53b01fc8224cbd857c0f068c0a2, type: 3}
-  - {fileID: -102725503, guid: ff3df53b01fc8224cbd857c0f068c0a2, type: 3}
-  - {fileID: 1712987465, guid: ff3df53b01fc8224cbd857c0f068c0a2, type: 3}
+  - {fileID: 1554437449, guid: ff3df53b01fc8224cbd857c0f068c0a2, type: 3}
+  - {fileID: -1509480555, guid: ff3df53b01fc8224cbd857c0f068c0a2, type: 3}
+  - {fileID: -2083134152, guid: ff3df53b01fc8224cbd857c0f068c0a2, type: 3}
+  - {fileID: -1032802938, guid: ff3df53b01fc8224cbd857c0f068c0a2, type: 3}
+--- !u!114 &2035424162567948519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7904241049809215584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349b161dc8f70b34dbcf4dfe81072e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rect: {fileID: 6214144962677838476}
+  _view: {fileID: 4155522700364016678}
+  _runAnimation: {fileID: 8962822502936715746}
+  _jumpFrame: {fileID: 1985859357, guid: ff3df53b01fc8224cbd857c0f068c0a2, type: 3}
