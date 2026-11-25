@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Moorkis.Dino2D.Player
@@ -9,6 +10,8 @@ namespace Moorkis.Dino2D.Player
         [SerializeField] private PlayerRunAnimation _runAnimation;
         [SerializeField] private Sprite _jumpFrame;
 
+        private const float DecreaseSpeedEveryFrame = 1000f;
+        private const float StartSpeed = 700f;
         private float _groungY;
         private float _speedY;
         private bool _isjump;
@@ -28,7 +31,7 @@ namespace Moorkis.Dino2D.Player
         private void StartJump()
         {
             _groungY = _rect.anchoredPosition.y;
-            _speedY = 700f;
+            _speedY = StartSpeed;
             _isjump = true;
             _runAnimation.enabled = false;
             _view.ShowFrame(_jumpFrame);
@@ -38,7 +41,8 @@ namespace Moorkis.Dino2D.Player
         {
             Vector2 position = _rect.anchoredPosition;
             position.y += _speedY * Time.deltaTime;
-            _speedY -= 1000f * Time.deltaTime;
+            _speedY -= DecreaseSpeedEveryFrame * Time.deltaTime;
+            
             if (position.y <= _groungY)
             {
                 position.y = _groungY;
